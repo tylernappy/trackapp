@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td>
+      <dt><%= @meet.name %></dt>
+      <dt><%= @meet.location %></dt>
+      <dt><%= @meet.date %></dt>
+    </td>
+  </tr>
+</table>
+
+<%= link_to "Back", season_meets_path, :class => 'btn' %>
+
+
+<%= link_to "Edit", edit_season_meet_path, :class => 'btn' %>

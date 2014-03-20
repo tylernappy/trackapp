@@ -1,0 +1,12 @@
+<%= form_for @season, :html => { :mulitpart => true } do |f| %>
+  
+  <%= f.label :winter %>
+  <%= f.check_box :winter %>
+  <%= f.label :spring %>
+  <%= f.check_box :spring %>
+  <%= f.label :year %>
+  <%= f.text_field :year  %>
+
+  <dt><%= f.submit "Submit", :class => 'btn' %></dt>
+
+<% end %>

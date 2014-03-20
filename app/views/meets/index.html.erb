@@ -1,0 +1,20 @@
+<h1>Meets</h1>
+
+<% @meets.each do |meet| %>
+<div class="row">
+  <div class="span5 offset4">
+    <%= link_to meet.name, season_meet_path(meet.season_id, meet.id) %>
+  </div>
+</div>
+
+<% end %>
+
+<div class="row">
+  <div class="span5 offset4">
+    <%= link_to "New Meet", new_season_meet_path, :class => 'btn' %>
+    <%= link_to "Back", season_path(@season), :class => 'btn btn-danger' %>
+
+  </div>
+</div>
+
+

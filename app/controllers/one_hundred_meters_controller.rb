@@ -1,0 +1,2 @@
+class OneHundredMetersController < ApplicationController
+end

@@ -1,0 +1,19 @@
+<%= form_for [@season, @meet], :html => { :mulitpart => true } do |f| %>
+  
+  <%= f.label :date %>
+  <%= f.date_field  :date %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :location %>
+  <%= f.text_field :location  %>
+
+  <dt><%= f.submit "Submit", :class => 'btn' %></dt>
+
+<% end %>
+
+<!--     t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "season_id"
+    t.date     "date"
+    t.string   "name"
+    t.string   "location" -->

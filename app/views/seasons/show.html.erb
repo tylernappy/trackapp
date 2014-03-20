@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td>
+      <dt><%= @season.year %></dt>
+      <dt><%= @season.winter %></dt>
+      <dt><%= @season.spring %></dt>
+    </td>
+  </tr>
+</table>
+
+<%= link_to "Back", seasons_path, :class => 'btn' %>
+<%= link_to "Edit", edit_season_path(@season), :class => 'btn' %>
+<%= link_to "New Meet", new_season_meet_path(@season) %>
+<%= link_to "See all meets", season_meets_path(@season) %>
