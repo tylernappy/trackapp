@@ -7,6 +7,7 @@ TrackAppTwo::Application.routes.draw do
 
   resources :seasons do
     resources :meets do
+      resources :events
       resources :one_hundred_meters
     end
   end

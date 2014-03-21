@@ -26,7 +26,8 @@ class MeetsController < ApplicationController
     # find_season
     # debugger
     # @meet = @season.meets.build
-    @meet = Meet.find(params[:id]) 
+    @season = find_season
+    @meet = @season.meets.find(params[:id]) 
     # debugger
     # debugger
   end
