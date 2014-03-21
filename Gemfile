@@ -12,7 +12,7 @@ gem "less-rails"
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'better_errors', :groups => [:development]
-gem 'parse-ruby-client'
+gem "binding_of_caller"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

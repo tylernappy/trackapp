@@ -3,7 +3,13 @@ TrackAppTwo::Application.routes.draw do
   get "static/main"
   get "static/about"
 
-  root 'static#main'
+  root 'seasons#index'
+
+  resources :seasons do
+    resources :meets do
+      resources :one_hundred_meters
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
