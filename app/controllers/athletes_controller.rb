@@ -1,10 +1,10 @@
 class AthletesController < ApplicationController
   def new
-    @athlete = Athlete.new
+   @athlete = current_coach.athletes.new
   end
 
   def create
-    @athlete = Athlete.create(athlete_permit)
+    @athlete = current_coach.athletes.create(athlete_permit)
 
     if @athlete.save
       redirect_to seasons_path, notice: 'Athlete was successfully created.'

@@ -5,6 +5,8 @@ class EventsController < ApplicationController
     @one_hundred_meters = @meet.one_hundred_meters.new
 
     @athletes = current_coach.athletes
+    # debugger
+    # debugger
   end
 
   def create
