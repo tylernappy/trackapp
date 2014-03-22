@@ -16,6 +16,14 @@ TrackAppTwo::Application.routes.draw do
     resources :meets do
       resources :events
       resources :one_hundred_meters
+      resources :eight_hundred_meter_ms
+      resources :four_hundred_hurdles_ms
+      resources :four_hundred_meter_ms
+      resources :one_hundred_meter_ms
+      resources :one_ten_hurdle_ms
+      resources :sixteen_hundred_meter_ms
+      resources :two_hundred_meter_ms
+      resources :two_mile_ms
     end
   end
 
