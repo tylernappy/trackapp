@@ -1,9 +1,16 @@
 TrackAppTwo::Application.routes.draw do
+  get "athletes/new"
+  get "athletes/create"
   devise_for :coaches
+
   get "static/main"
   get "static/about"
 
   root 'seasons#index'
+
+  resources :coaches do
+    resources :athletes
+  end
 
   resources :seasons do
     resources :meets do

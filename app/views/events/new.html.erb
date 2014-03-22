@@ -1,1 +1,14 @@
-<h1>Create new events</h1>
+<h1><%= "Create new events for #{@meet.name}" %></h1>
+
+<table>
+  <tr>
+    <th>One Hundred Meter Dash</th>
+  </tr>
+  <% @athletes.each do |athlete| %>
+    <tr>
+      <td>
+<%= athlete.name %></dt>
+      </td>
+    </tr>
+  <% end %>
+</table>

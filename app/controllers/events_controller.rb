@@ -2,6 +2,9 @@ class EventsController < ApplicationController
   def new
     @season = find_season
     @meet = find_meet(@season)
+    @one_hundred_meters = @meet.one_hundred_meters.new
+
+    @athletes = current_coach.athletes
   end
 
   def create

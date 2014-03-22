@@ -1,6 +1,7 @@
 class SeasonsController < ApplicationController
   def index
     @seasons = Season.all
+    @athletes = Athlete.all
   end
 
   def new

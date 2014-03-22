@@ -3,7 +3,7 @@
 <% @meets.each do |meet| %>
 <div class="row">
   <div class="span5 offset4">
-    <%= link_to meet.name, season_meet_path(meet.season_id, meet.id) %>
+    <h3><%= link_to meet.name, season_meet_path(meet.season_id, meet.id) %></h3>
   </div>
 </div>
 

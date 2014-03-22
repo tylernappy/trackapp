@@ -1,18 +1,51 @@
-<h1>Seasons</h1>
-
-<% @seasons.each do |season| %>
 <div class="row">
-  <div class="span5 offset4">
-    <%= link_to season.year, season %>
-  </div>
-</div>
+  <div class="span6">
+    <h1>Seasons</h1>
 
-<% end %>
+    <% @seasons.each do |season| %>
+    <div class="row">
+      <div class="span5 offset4">
+        <% if season.spring == true %>
+          <h3><%= link_to "Spring #{season.year}", season %></h3>
+        <% elsif season.winter == true %>
+          <h3><%= link_to "Winter #{season.year}", season %></h3>
+        <% end %>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="span5 offset4">
-    <%= link_to "New Season", new_season_path, :class => 'btn' %>
+    <% end %>
+
+    <div class="row">
+      <div class="span5 offset4">
+        <%= link_to "New Season", new_season_path, :class => 'btn' %>
+      </div>
+    </div>
+
   </div>
+
+
+
+  <div class="span6">
+    <h1>Athletes</h1>
+
+    <% @athletes.each do |athlete| %>
+    <div class="row">
+      <div class="span5 offset4">
+        <h3><%= link_to athlete.name, coach_athlete_path(current_coach, athlete) %></h3>
+      </div>
+    </div>
+
+    <% end %>
+
+    <div class="row">
+      <div class="span5 offset4">
+        <%= link_to "New Athlete", new_coach_athlete_path(current_coach) , :class => 'btn' %>
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
 
 
