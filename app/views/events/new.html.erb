@@ -2,12 +2,19 @@
 
 <table>
   <tr>
-    <th>One Hundred Meter Dash</th>
+    <th></th>
+    <th>400 IH (M)</th>
+    <th>400 IM (F)</th>
+    <th></th>
+    <th>Two Hundred Meter Dash</th>
   </tr>
   <% @athletes.each do |athlete| %>
     <tr>
       <td>
         <%= athlete.name %>
+      </td>
+      <td>
+        <%= check_box_tag("#{athlete.name}".to_sym) %>
       </td>
     </tr>
   <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321214302) do
+ActiveRecord::Schema.define(version: 20140322165023) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -41,6 +41,42 @@ ActiveRecord::Schema.define(version: 20140321214302) do
   add_index "coaches", ["email"], name: "index_coaches_on_email", unique: true
   add_index "coaches", ["reset_password_token"], name: "index_coaches_on_reset_password_token", unique: true
 
+  create_table "eight_hundred_meter_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "four_hundred_hurdles_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "four_hundred_meter_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "meets", force: true do |t|
     t.date     "date"
     t.string   "name"
@@ -50,7 +86,31 @@ ActiveRecord::Schema.define(version: 20140321214302) do
     t.datetime "updated_at"
   end
 
+  create_table "one_hundred_meter_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "one_hundred_meters", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "one_ten_hurdle_ms", force: true do |t|
     t.integer  "meet_id"
     t.integer  "first_place_id"
     t.integer  "second_place_id"
@@ -69,6 +129,42 @@ ActiveRecord::Schema.define(version: 20140321214302) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "coach_id"
+  end
+
+  create_table "sixteen_hundred_meter_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "two_hundred_meter_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "two_mile_ms", force: true do |t|
+    t.integer  "meet_id"
+    t.integer  "first_place_id"
+    t.integer  "second_place_id"
+    t.integer  "third_place_id"
+    t.integer  "fourth_place_id"
+    t.integer  "fifth_place_id"
+    t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

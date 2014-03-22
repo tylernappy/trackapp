@@ -7,7 +7,7 @@ class AthletesController < ApplicationController
     @athlete = current_coach.athletes.create(athlete_permit)
 
     if @athlete.save
-      redirect_to seasons_path, notice: 'Athlete was successfully created.'
+      redirect_to new_coach_athlete_path, notice: 'Athlete was successfully created.'
     else
       render action: "new"
     end
