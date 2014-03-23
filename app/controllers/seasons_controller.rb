@@ -1,7 +1,9 @@
 class SeasonsController < ApplicationController
   def index
-    @seasons = Season.all
-    @athletes = Athlete.all
+    if coach_signed_in?
+      @seasons = Season.all
+      @athletes = current_coach.athletes
+    end
   end
 
   def new

@@ -1,6 +1,7 @@
 class AthletesController < ApplicationController
   def new
    @athlete = current_coach.athletes.new
+   @athletes_already_created = current_coach.athletes.order('created_at DESC')
   end
 
   def create
