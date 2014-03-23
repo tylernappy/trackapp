@@ -2,7 +2,9 @@ class SeasonsController < ApplicationController
   def index
     if coach_signed_in?
       @seasons = Season.all
-      @athletes = current_coach.athletes
+      # @athletes = current_coach.athletes
+      @athletes_boys = current_coach.athletes.where(boy: true)
+      @athletes_girls = current_coach.athletes.where(girl: true)
     end
   end
 

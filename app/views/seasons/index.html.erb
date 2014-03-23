@@ -29,18 +29,35 @@
 
     <div class="span6">
       <h1>Athletes</h1>
+        <div class="row">
+          <div class="span3">
+            <h2>Boys</h2>
+            <% @athletes_boys.each do |athlete| %>
+            <div class="row">
+              <div class="span3">
+                <p><%= link_to athlete.name, coach_athlete_path(current_coach, athlete) %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
 
-      <% @athletes.each do |athlete| %>
-      <div class="row">
-        <div class="span5 offset4">
-          <h3><%= link_to athlete.name, coach_athlete_path(current_coach, athlete) %></h3>
+          <div class="span3">
+            <h2>Girls</h2>
+            <% @athletes_girls.each do |athlete| %>
+            <div class="row">
+              <div class="span3">
+                <p><%= link_to athlete.name, coach_athlete_path(current_coach, athlete) %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
         </div>
-      </div>
 
-      <% end %>
+
 
       <div class="row">
-        <div class="span5 offset4">
+        <div class="span3">
           <%= link_to "New Athlete", new_coach_athlete_path(current_coach) , :class => 'btn' %>
         </div>
       </div>

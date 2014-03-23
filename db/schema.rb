@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322165023) do
+ActiveRecord::Schema.define(version: 20140323185137) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140322165023) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "coach_id"
+    t.boolean  "boy"
+    t.boolean  "girl"
   end
 
   create_table "coaches", force: true do |t|

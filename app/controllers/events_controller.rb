@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @one_hundred_meters = @meet.one_hundred_meters.new
 
     @athletes = current_coach.athletes
-    @events = ["Four Hundred Hurdles (M)", "Sixteen Hundred Meters (M)", "One Hundred Meter (M)", "One-Hundredten HH (M)", "Two Mile (M)", "Four Hundred Meters (M)", "Two Hundred Meters (M)", "Eight Hundred Meters (M)"]
+    @events = ["400 Hurdles (M)", "1600 (M)", "100 (M)", "110 HH (M)", "3200 (M)", "400 (M)", "200 (M)", "800 (M)"]
     # debugger
     # debugger
   end
