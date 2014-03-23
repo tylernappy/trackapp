@@ -3,6 +3,11 @@
     <td>
       <dt><%= @athlete.name %></dt>
       <dt><%= @athlete.grade %></dt>
+      <% if @athlete.boy == true %>
+        <dt><%= "Boy" %></dt>
+      <% elsif @athlete.girl == true  %>
+        <dt><%= "Girl" %></dt>
+      <% end %>
     </td>
   </tr>
 </table>
