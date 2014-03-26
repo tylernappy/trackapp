@@ -1,4 +1,9 @@
 TrackAppTwo::Application.routes.draw do
+  get "events_boys/new"
+  get "events_boys/create"
+  get "events_boys/index"
+  get "events_boys/update"
+  get "events_boys/edit"
   get "athletes/new"
   get "athletes/create"
   devise_for :coaches
@@ -14,16 +19,18 @@ TrackAppTwo::Application.routes.draw do
 
   resources :seasons do
     resources :meets do
-      resources :events
-      resources :one_hundred_meters
-      resources :eight_hundred_meter_ms
-      resources :four_hundred_hurdles_ms
-      resources :four_hundred_meter_ms
-      resources :one_hundred_meter_ms
-      resources :one_ten_hurdle_ms
-      resources :sixteen_hundred_meter_ms
-      resources :two_hundred_meter_ms
-      resources :two_mile_ms
+      resources :events_boys
+      # resources :events_girls
+      # resources :events
+      # resources :one_hundred_meters
+      # resources :eight_hundred_meter_ms
+      # resources :four_hundred_hurdles_ms
+      # resources :four_hundred_meter_ms
+      # resources :one_hundred_meter_ms
+      # resources :one_ten_hurdle_ms
+      # resources :sixteen_hundred_meter_ms
+      # resources :two_hundred_meter_ms
+      # resources :two_mile_ms
     end
   end
 

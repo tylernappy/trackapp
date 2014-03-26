@@ -33,7 +33,7 @@ class MeetsController < ApplicationController
   end
 
   def edit
-    @season = Season.find(params[:season_id])
+    find_season
     @meet = Meet.find(params[:id])
   end
 

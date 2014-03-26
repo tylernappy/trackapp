@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323185137) do
+ActiveRecord::Schema.define(version: 20140324164448) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -53,6 +53,37 @@ ActiveRecord::Schema.define(version: 20140323185137) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "events_boys", force: true do |t|
+    t.boolean  "boys_400_m_im"
+    t.boolean  "boys_1600_m"
+    t.boolean  "boys_400_m"
+    t.boolean  "boys_110_m_hh"
+    t.boolean  "boys_800_m"
+    t.boolean  "boys_3200_m"
+    t.boolean  "boys_200_m"
+    t.float    "time_400_m_im"
+    t.float    "time_1600_m"
+    t.float    "time_400_m"
+    t.float    "time_110_m_hh"
+    t.float    "time_800_m"
+    t.float    "time_3200_m"
+    t.float    "time_200_m"
+    t.integer  "place_400_m_im"
+    t.integer  "place_1600_m"
+    t.integer  "place_400_m"
+    t.integer  "place_110_m_hh"
+    t.integer  "place_800_m"
+    t.integer  "place_3200_m"
+    t.integer  "place_200_m"
+    t.integer  "athlete_id"
+    t.integer  "meet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "boys_100_m"
+    t.float    "time_100_m"
+    t.integer  "place_100_m"
   end
 
   create_table "four_hundred_hurdles_ms", force: true do |t|
@@ -120,6 +151,13 @@ ActiveRecord::Schema.define(version: 20140323185137) do
     t.integer  "fourth_place_id"
     t.integer  "fifth_place_id"
     t.integer  "sixth_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "racers", force: true do |t|
+    t.integer  "athlete_id"
+    t.string   "eight_hundred_meter_m_id_integer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

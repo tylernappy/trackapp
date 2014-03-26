@@ -1,0 +1,70 @@
+<h1><%= "Boys lineup for #{@meet.name}" %></h1>
+<table id="events-table">
+      <tr>
+        <th></th>
+        <% @events.each do |event| %>
+          <th><%= event %></th>
+        <% end %>
+      </tr>
+
+      <% @events_boys.each do |events_boys| %>
+        <% event = events_boys.first  %>
+        <tr>
+          <td><%= Athlete.find_by_id(event.athlete_id).name %></td>
+          
+            <td>
+              <% if event.boys_400_m_im == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %> 
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_100_m == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>    
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_1600_m == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>    
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_400_m == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_110_m_hh == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %> 
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_800_m == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>    
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_3200_m == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+              <% end %>
+            </td>
+
+            <td>
+              <% if event.boys_200_m == true %>
+                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+              <% end %>
+            </td>
+
+            <td>
+              <%= link_to "Input Times", edit_season_meet_events_boy_path(@season, @meet, event.id) %>
+            </td>
+
+        </tr>
+      <% end %>
+
+    </table>
