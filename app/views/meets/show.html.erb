@@ -9,8 +9,6 @@
 </table>
 
 <%= link_to "Create Event Lineup", new_season_meet_events_boy_path(@season, @meet), :class => 'btn btn-success' %>
-
+<%= link_to "See Lineup", season_meet_events_boys_path(@season, @meet), :class => 'btn' %>
 <%= link_to "Back", season_meets_path, :class => 'btn' %>
-
-
 <%= link_to "Edit", edit_season_meet_path, :class => 'btn' %>

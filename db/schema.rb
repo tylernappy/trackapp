@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324164448) do
+ActiveRecord::Schema.define(version: 20140326031723) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -63,13 +63,6 @@ ActiveRecord::Schema.define(version: 20140324164448) do
     t.boolean  "boys_800_m"
     t.boolean  "boys_3200_m"
     t.boolean  "boys_200_m"
-    t.float    "time_400_m_im"
-    t.float    "time_1600_m"
-    t.float    "time_400_m"
-    t.float    "time_110_m_hh"
-    t.float    "time_800_m"
-    t.float    "time_3200_m"
-    t.float    "time_200_m"
     t.integer  "place_400_m_im"
     t.integer  "place_1600_m"
     t.integer  "place_400_m"
@@ -82,8 +75,31 @@ ActiveRecord::Schema.define(version: 20140324164448) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "boys_100_m"
-    t.float    "time_100_m"
     t.integer  "place_100_m"
+    t.integer  "time_minutes_400_m_im"
+    t.integer  "time_minutes_1600_m"
+    t.integer  "time_minutes_400_m"
+    t.integer  "time_minutes_110_m_hh"
+    t.integer  "time_minutes_800_m"
+    t.integer  "time_minutes_3200_m"
+    t.integer  "time_minutes_200_m"
+    t.integer  "time_minutes_100_m"
+    t.integer  "time_seconds_400_m_im"
+    t.integer  "time_seconds_1600_m"
+    t.integer  "time_seconds_400_m"
+    t.integer  "time_seconds_110_m_hh"
+    t.integer  "time_seconds_800_m"
+    t.integer  "time_seconds_3200_m"
+    t.integer  "time_seconds_200_m"
+    t.integer  "time_seconds_100_m"
+    t.integer  "time_decimals_400_m_im"
+    t.integer  "time_decimals_1600_m"
+    t.integer  "time_decimals_400_m"
+    t.integer  "time_decimals_110_m_hh"
+    t.integer  "time_decimals_800_m"
+    t.integer  "time_decimals_3200_m"
+    t.integer  "time_decimals_200_m"
+    t.integer  "time_decimals_100_m"
   end
 
   create_table "four_hundred_hurdles_ms", force: true do |t|

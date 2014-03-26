@@ -1,2 +1,173 @@
 <h1><%= "Update #{@athlete.name} events" %></h1>
-<p>Find me in app/views/events_boys/edit.html.erb</p>
+<%= form_for [@season, @meet, @events_boy], :html => { :mulitpart => true } do |f| %>
+  <table>
+    <tr>
+      <td></td>
+      <td>Minutes</td>
+      <td></td>
+      <td>Seconds</td>
+      <td></td>
+      <td>Decimal</td>
+    </tr>
+   
+  <!-- 400 IM HH -->
+  <% if @events_boy.boys_400_m_im == true %>
+    <tr>
+      <th><%= "400 IH" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_400_m_im, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_400_m_im, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_400_m_im, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_400_m_im, (0...100) %></td>
+    </tr>
+  <% end %>
+
+  <!-- 1600 -->
+  <% if @events_boy.boys_1600_m == true %>
+    <tr>
+      <th><%= "1600" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_1600_m, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_1600_m, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_1600_m, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_1600_m, (0...100) %></td>
+    </tr>
+  <% end %>
+
+<!-- 100 -->
+  <% if @events_boy.boys_100_m == true %>
+    <tr>
+      <th><%= "100" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_100_m, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_100_m, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_100_m, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_100_m, (0...100) %></td>
+    </tr>
+  <% end %>
+
+  <!-- 400 -->
+  <% if @events_boy.boys_400_m == true %>
+    <tr>
+      <th><%= "400" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_400_m, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_400_m, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_400_m, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_400_m, (0...100) %></td>
+    </tr>
+  <% end %>
+
+  <!-- 110 HH -->
+  <% if @events_boy.boys_110_m_hh == true %>
+    <tr>
+      <th><%= "110 HH" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_110_m_hh, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_110_m_hh, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_110_m_hh, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_110_m_hh, (0...100) %></td>
+    </tr>
+  <% end %>
+
+  <!-- 800 -->
+  <% if @events_boy.boys_800_m == true %>
+    <tr>
+      <th><%= "800" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_800_m, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_800_m, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_800_m, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_800_m, (0...100) %></td>
+    </tr>
+  <% end %>
+
+  <!-- 3200 -->
+  <% if @events_boy.boys_3200_m == true %>
+    <tr>
+      <th><%= "3200" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_3200_m, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_3200_m, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_3200_m, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_3200_m, (0...100) %></td>
+    </tr>
+  <% end %>
+
+    <!-- 200 -->
+  <% if @events_boy.boys_200_m == true %>
+    <tr>
+      <th><%= "200" %></th>
+    </tr>
+    <tr>
+      <td><%= f.label "Place" %></td>
+      <td><%= f.select :place_200_m, (1..6)  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Time" %></td>
+      <td><%= f.select :time_minutes_200_m, (0...60) %></td>
+      <td>:</td>
+      <td><%= f.select :time_seconds_200_m, (0...60) %></td>
+      <td>.</td>
+      <td><%= f.select :time_decimals_200_m, (0...100) %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td></td>
+    <td><%= f.submit "Submit", :class => 'btn btn-success' %></td>
+    <td></td>
+    <td><%= link_to "Back", season_meet_events_boys_path, :class => 'btn btn-danger'  %></td>
+  </tr>
+
+</table>
+<% end %>
