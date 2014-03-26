@@ -89,33 +89,3 @@ class EventsBoysController < ApplicationController
   end
 
 end
-
-
-    # t.boolean  "boys_400_m_im"
-    # t.boolean  "boys_1600_m"
-    # t.boolean  "boys_400_m"
-    # t.boolean  "boys_110_m_hh"
-    # t.boolean  "boys_800_m"
-    # t.boolean  "boys_3200_m"
-    # t.boolean  "boys_200_m"
-    # t.float    "time_400_m_im"
-    # t.float    "time_1600_m"
-    # t.float    "time_400_m"
-    # t.float    "time_110_m_hh"
-    # t.float    "time_800_m"
-    # t.float    "time_3200_m"
-    # t.float    "time_200_m"
-    # t.integer  "place_400_m_im"
-    # t.integer  "place_1600_m"
-    # t.integer  "place_400_m"
-    # t.integer  "place_110_m_hh"
-    # t.integer  "place_800_m"
-    # t.integer  "place_3200_m"
-    # t.integer  "place_200_m"
-    # t.integer  "athlete_id"
-    # t.integer  "meet_id"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
-    # t.boolean  "boys_100_m"
-    # t.float    "time_100_m"
-    # t.integer  "place_100_m"

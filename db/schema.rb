@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326031723) do
+ActiveRecord::Schema.define(version: 20140326210458) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -63,19 +63,11 @@ ActiveRecord::Schema.define(version: 20140326031723) do
     t.boolean  "boys_800_m"
     t.boolean  "boys_3200_m"
     t.boolean  "boys_200_m"
-    t.integer  "place_400_m_im"
-    t.integer  "place_1600_m"
-    t.integer  "place_400_m"
-    t.integer  "place_110_m_hh"
-    t.integer  "place_800_m"
-    t.integer  "place_3200_m"
-    t.integer  "place_200_m"
     t.integer  "athlete_id"
     t.integer  "meet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "boys_100_m"
-    t.integer  "place_100_m"
     t.integer  "time_minutes_400_m_im"
     t.integer  "time_minutes_1600_m"
     t.integer  "time_minutes_400_m"
@@ -100,6 +92,14 @@ ActiveRecord::Schema.define(version: 20140326031723) do
     t.integer  "time_decimals_3200_m"
     t.integer  "time_decimals_200_m"
     t.integer  "time_decimals_100_m"
+    t.string   "place_400_m_im"
+    t.string   "place_1600_m"
+    t.string   "place_100_m"
+    t.string   "place_400_m"
+    t.string   "place_110_m_hh"
+    t.string   "place_800_m"
+    t.string   "place_3200_m"
+    t.string   "place_200_m"
   end
 
   create_table "four_hundred_hurdles_ms", force: true do |t|

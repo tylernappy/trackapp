@@ -17,7 +17,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_400_m_im, (1..6)  %></td>
+      <td><%= f.select :place_400_m_im, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -36,7 +36,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_1600_m, (1..6)  %></td>
+      <td><%= f.select :place_1600_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -55,7 +55,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_100_m, (1..6)  %></td>
+      <td><%= f.select :place_100_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -74,7 +74,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_400_m, (1..6)  %></td>
+      <td><%= f.select :place_400_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -93,7 +93,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_110_m_hh, (1..6)  %></td>
+      <td><%= f.select :place_110_m_hh, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -112,7 +112,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_800_m, (1..6)  %></td>
+      <td><%= f.select :place_800_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -131,7 +131,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_3200_m, (1..6)  %></td>
+      <td><%= f.select :place_3200_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_200_m, (1..6)  %></td>
+      <td><%= f.select :place_200_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>

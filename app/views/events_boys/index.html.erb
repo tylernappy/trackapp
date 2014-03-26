@@ -14,49 +14,97 @@
           
             <td>
               <% if event.boys_400_m_im == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %> 
+                <% if event.place_400_m_im == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_400_m_im.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_400_m_im %>
+                <% end %> 
               <% end %>
             </td>
 
             <td>
               <% if event.boys_100_m == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>    
+                <% if event.place_100_m == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_100_m.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_100_m %> 
+                <% end %> 
               <% end %>
             </td>
 
             <td>
               <% if event.boys_1600_m == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>    
+                <% if event.place_1600_m == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_1600_m.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_1600_m %> 
+                <% end %>   
               <% end %>
             </td>
 
             <td>
               <% if event.boys_400_m == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% if event.place_400_m == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_400_m.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_400_m %> 
+                <% end %>
               <% end %>
             </td>
 
             <td>
               <% if event.boys_110_m_hh == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %> 
+                <% if event.place_110_m_hh == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_110_m_hh.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_110_m_hh %> 
+                <% end %>
               <% end %>
             </td>
 
             <td>
               <% if event.boys_800_m == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>    
+                <% if event.place_800_m == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_800_m.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_800_m %>  
+                <% end %>  
               <% end %>
             </td>
 
             <td>
               <% if event.boys_3200_m == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% if event.place_3200_m == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_3200_m.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_3200_m %> 
+                <% end %>
               <% end %>
             </td>
 
             <td>
               <% if event.boys_200_m == true %>
-                <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% if event.place_200_m == 'No Place' %>
+                  <%= image_tag("WX_circle_red.png", size: "16") %>
+                <% elsif event.place_200_m.nil? %>
+                  <%= image_tag("600px-Ski_trail_rating_symbol-green_circle.svg.png", size: "16") %>
+                <% else %>
+                  <%= event.place_200_m %> 
+                <% end %>
               <% end %>
             </td>
 
