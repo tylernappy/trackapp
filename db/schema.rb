@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327215837) do
+ActiveRecord::Schema.define(version: 20140327231215) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -182,9 +182,24 @@ ActiveRecord::Schema.define(version: 20140327215837) do
     t.datetime "updated_at"
   end
 
+  create_table "opponents", force: true do |t|
+    t.integer  "school_id"
+    t.integer  "meet_id"
+    t.float    "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "racers", force: true do |t|
     t.integer  "athlete_id"
     t.string   "eight_hundred_meter_m_id_integer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: true do |t|
+    t.integer  "coach_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

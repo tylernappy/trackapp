@@ -15,6 +15,8 @@ class Meet < ActiveRecord::Base
   has_many :two_hundred_meter_ms
   has_many :two_mile_ms
 
+  has_many :opponents
+
   def self.calculate_total_points meet, events
     total_points = 0
     events.each do |event|

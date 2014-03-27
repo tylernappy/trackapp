@@ -1,19 +1,20 @@
 class SeasonsController < ApplicationController
   def index
     if coach_signed_in?
-      @seasons = Season.all
+      @seasons = current_coach.seasons
       # @athletes = current_coach.athletes
       @athletes_boys = current_coach.athletes.where(boy: true)
       @athletes_girls = current_coach.athletes.where(girl: true)
+      @schools = current_coach.schools
     end
   end
 
   def new
-    @season = Season.new
+    @season = current_coach.seasons.new
   end
 
   def create
-    @season = Season.create(season_permit)
+    @season = current_coach.seasons.create(season_permit)
 
     if @season.save
       redirect_to @season, notice: 'Season was successfully created.'
@@ -23,16 +24,16 @@ class SeasonsController < ApplicationController
   end
 
   def show
-    @season = Season.find(params[:id])
+    @season = current_coach.seasons.find(params[:id])
     @meets = @season.meets.build
   end
 
   def edit
-    @season = Season.find(params[:id])
+    @season = current_coach.seasons.find(params[:id])
   end
 
   def update
-    @season = Season.find(params[:id])
+    @season = current_coach.seasons.find(params[:id])
     if @season.update_attributes(season_permit)
       redirect_to @season, notice: 'season was successfully updated.'
     else
@@ -41,7 +42,7 @@ class SeasonsController < ApplicationController
   end
 
   def destroy
-    @season = Season.find(params[:id])
+    @season = current_coach.season.find(params[:id])
     @season.destroy
 
     redirect_to seasons_path
@@ -49,7 +50,7 @@ class SeasonsController < ApplicationController
 
   private
   def season_permit
-    params.require(:season).permit(:spring, :winter, :year)
+    params.require(:season).permit(:spring, :winter, :year, :coach_id)
   end
 #   before_filter :authenticate_owner!, only: [:new, :create]
 #   before_filter :confirm_ownership, only: [:edit, :update, :destroy]

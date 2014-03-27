@@ -1,4 +1,10 @@
 TrackAppTwo::Application.routes.draw do
+  get "schools/new"
+  get "schools/create"
+  get "schools/index"
+  get "schools/update"
+  get "schools/delete"
+  get "schools/edit"
   get "events_boys/new"
   get "events_boys/create"
   get "events_boys/index"
@@ -15,6 +21,7 @@ TrackAppTwo::Application.routes.draw do
 
   resources :coaches do
     resources :athletes
+    resources :schools
   end
 
   resources :seasons do

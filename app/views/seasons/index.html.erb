@@ -2,12 +2,12 @@
 <% if coach_signed_in? %>
 
   <div class="row">
-    <div class="span6">
+    <div class="span4">
       <h1>Seasons</h1>
 
       <% @seasons.each do |season| %>
       <div class="row">
-        <div class="span5 offset4">
+        <div class="span4">
           <% if season.spring == true %>
             <h3><%= link_to "Spring #{season.year}", season %></h3>
           <% elsif season.winter == true %>
@@ -19,7 +19,7 @@
       <% end %>
 
       <div class="row">
-        <div class="span5 offset4">
+        <div class="span4">
           <%= link_to "New Season", new_season_path, :class => 'btn' %>
         </div>
       </div>
@@ -27,25 +27,25 @@
     </div>
 
 
-    <div class="span6">
+    <div class="span4">
       <h1>Athletes</h1>
         <div class="row">
-          <div class="span3">
+          <div class="span2">
             <h2>Boys</h2>
             <% @athletes_boys.each do |athlete| %>
             <div class="row">
-              <div class="span3">
+              <div class="span2">
                 <p><%= link_to athlete.name, coach_athlete_path(current_coach, athlete) %></p>
               </div>
             </div>
             <% end %>
           </div>
 
-          <div class="span3">
+          <div class="span2">
             <h2>Girls</h2>
             <% @athletes_girls.each do |athlete| %>
             <div class="row">
-              <div class="span3">
+              <div class="span2">
                 <p><%= link_to athlete.name, coach_athlete_path(current_coach, athlete) %></p>
               </div>
             </div>
@@ -57,11 +57,23 @@
 
 
       <div class="row">
-        <div class="span3">
+        <div class="span2">
           <%= link_to "New Athlete", new_coach_athlete_path(current_coach) , :class => 'btn' %>
         </div>
       </div>
 
+    </div>
+
+    <div class="span4">
+      <h1>Opponents</h1>
+        <% @schools.each do |school| %>
+          <div class="row">
+            <div class="span4">
+              <p><%= school.name %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
 
 

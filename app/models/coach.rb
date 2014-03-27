@@ -3,6 +3,7 @@ class Coach < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :athletes
   has_many :seasons
+  has_many :schools
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
