@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326214534) do
+ActiveRecord::Schema.define(version: 20140327215837) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -142,6 +142,8 @@ ActiveRecord::Schema.define(version: 20140326214534) do
     t.integer  "fourth_regular"
     t.integer  "fifth_regular"
     t.integer  "sixth_regular"
+    t.float    "boys_total_points"
+    t.float    "girls_total_points"
   end
 
   create_table "one_hundred_meter_ms", force: true do |t|

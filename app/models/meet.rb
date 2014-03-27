@@ -40,7 +40,11 @@ class Meet < ActiveRecord::Base
         end 
       end
     end
-    return total_points
+    if events.first.table_name == "events_boys"
+      meet.boys_total_points = total_points
+    elsif events.first.table_name == "events_girls"
+      meet.girls_total_points = total_points
+    end
   end
 
   def self.hello
