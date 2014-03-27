@@ -51,12 +51,12 @@ class MeetsController < ApplicationController
     @meet = Meet.find(params[:id])
     @meet.destroy
 
-    redirect_to Seasons_path
+    redirect_to seasons_path
   end
 
   private
   def meet_permit
-    params.require(:meet).permit(:season_id, :date, :location, :name)
+    params.require(:meet).permit(:season_id, :date, :location, :name, :first_relay, :second_relay, :third_relay, :first_regular, :second_regular, :third_regular, :fourth_regular, :fifth_regular, :sixth_regular)
   end
 
   def find_season

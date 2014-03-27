@@ -50,6 +50,7 @@ class EventsBoysController < ApplicationController
       @events_boys << EventsBoy.where(:athlete_id => athlete.id, :meet_id => @meet.id)
     end
     create_events_array
+    
   end
 
   def edit

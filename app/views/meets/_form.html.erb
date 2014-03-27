@@ -1,11 +1,51 @@
 <%= form_for [@season, @meet], :html => { :mulitpart => true } do |f| %>
   
-  <%= f.label :date %>
-  <%= f.date_field  :date %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :location %>
-  <%= f.text_field :location  %>
+  <div class="row">
+    
+    <div class="span6">      
+      <h2>General Information</h2>
+      <%= f.label :date %>
+      <%= f.date_field  :date %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :location %>
+      <%= f.text_field :location  %>
+    </div>
+    
+    <div class="span6">
+      <h2>Scoring Information</h2>
+      
+      <div class="row">
+        <div class="span3">
+          <h3>Regular Races</h3>
+          <%= f.label "First Place" %>
+          <%= f.select :first_regular, (0..10)  %>
+          <%= f.label "Second Place" %>
+          <%= f.select :second_regular, (0..10)  %>
+          <%= f.label "Third Place" %>
+          <%= f.select :third_regular, (0..10)  %>
+          <%= f.label "Fourth Place" %>
+          <%= f.select :fourth_regular, (0..10)  %>
+          <%= f.label "Fifth Place" %>
+          <%= f.select :fifth_regular, (0..10)  %>
+          <%= f.label "Sixth Place" %>
+          <%= f.select :sixth_regular, (0..10)  %>
+        </div>
+
+        <div class="span3">
+          <h3>Relays</h3>
+          <%= f.label "First Place" %>
+          <%= f.select :first_relay, (0..10)  %>
+          <%= f.label "Second Place" %>
+          <%= f.select :second_relay, (0..10)  %>
+          <%= f.label "Third Place" %>
+          <%= f.select :third_relay, (0..10)  %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 
   <dt><%= f.submit "Submit", :class => 'btn' %></dt>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326210458) do
+ActiveRecord::Schema.define(version: 20140326214534) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -133,6 +133,15 @@ ActiveRecord::Schema.define(version: 20140326210458) do
     t.integer  "season_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_relay"
+    t.integer  "second_relay"
+    t.integer  "third_relay"
+    t.integer  "first_regular"
+    t.integer  "second_regular"
+    t.integer  "third_regular"
+    t.integer  "fourth_regular"
+    t.integer  "fifth_regular"
+    t.integer  "sixth_regular"
   end
 
   create_table "one_hundred_meter_ms", force: true do |t|
