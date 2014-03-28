@@ -6,7 +6,7 @@ class MeetsController < ApplicationController
     find_season
     @meet = @season.meets.create(meet_permit)
     if @meet.save
-      redirect_to @season, notice: 'Season was successfully created.'
+      redirect_to new_season_meet_opponent_path(@season, @meet), notice: 'Season was successfully created.'
     else
       render action: "new"
     end

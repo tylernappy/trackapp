@@ -1,4 +1,10 @@
 TrackAppTwo::Application.routes.draw do
+  get "opponents/new"
+  get "opponents/create"
+  get "opponents/edit"
+  get "opponents/update"
+  get "opponents/index"
+  get "schools/show"
   get "schools/new"
   get "schools/create"
   get "schools/index"
@@ -28,6 +34,7 @@ TrackAppTwo::Application.routes.draw do
     resources :meets do
       resources :events_boys
       # resources :events_girls
+      resources :opponents
       # resources :events
       # resources :one_hundred_meters
       # resources :eight_hundred_meter_ms

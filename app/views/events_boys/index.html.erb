@@ -1,6 +1,6 @@
 <h1><%= "Boys lineup for #{@meet.name}" %></h1>
 <% Meet.calculate_total_points(@meet, @events_boys) %>
-<h3><%= "Total Points: #{@meet.boys_total_points}" %></h3>
+<h3><%= "Total Points: #{@meet.boys_total_points}"  %></h3>
 
 <div class="row">
   <div class="span12">
@@ -125,5 +125,11 @@
       <% end %>
 
     </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <%= link_to "Meet Dashboard", season_meet_path(@season, @meet), :class => 'btn' %>
   </div>
 </div>

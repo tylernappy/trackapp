@@ -1,0 +1,8 @@
+<%= form_for ([current_coach, @school]), :html => { :mulitpart => true } do |f| %>
+  
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <dt><%= f.submit "Submit", :class => 'btn' %></dt>
+
+<% end %>
