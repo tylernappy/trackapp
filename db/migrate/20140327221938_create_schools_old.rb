@@ -1,4 +1,4 @@
-class CreateSchools < ActiveRecord::Migration
+class CreateSchoolsOld < ActiveRecord::Migration
   def change
     create_table :schools do |t|
       t.string :name
@@ -7,3 +7,5 @@ class CreateSchools < ActiveRecord::Migration
     end
   end
 end
+
+# changed from CreateSchools to CreateSchoolsOld

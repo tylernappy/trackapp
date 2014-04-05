@@ -1,4 +1,4 @@
-class CreateOpponents < ActiveRecord::Migration
+class CreateOpponentsOld < ActiveRecord::Migration
   def change
     create_table :opponents do |t|
       t.integer :school_id
@@ -9,3 +9,5 @@ class CreateOpponents < ActiveRecord::Migration
     end
   end
 end
+
+#changed from CreateOpponents to CreateOpponentsOld
