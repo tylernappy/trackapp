@@ -1,4 +1,10 @@
 TrackAppTwo::Application.routes.draw do
+  get "two_hundred_meter_ms/edit"
+  get "two_mile_ms/edit"
+  get "eight_hundred_meter_ms/edit"
+  get "one_ten_hurdle_ms/edit"
+  get "four_hundred_meter_ms/edit"
+  get "sixteen_hundred_meter_ms/edit"
   get "four_hundred_hurdles_ms/edit"
   get "four_hundred_hurdles_ms/update"
   get "opponents/new"
@@ -39,15 +45,13 @@ TrackAppTwo::Application.routes.draw do
       resources :opponents
       resources :four_hundred_hurdles_ms
       # resources :events
-      # resources :one_hundred_meters
-      # resources :eight_hundred_meter_ms
-      # resources :four_hundred_hurdles_ms
-      # resources :four_hundred_meter_ms
-      # resources :one_hundred_meter_ms
-      # resources :one_ten_hurdle_ms
-      # resources :sixteen_hundred_meter_ms
-      # resources :two_hundred_meter_ms
-      # resources :two_mile_ms
+      resources :eight_hundred_meter_ms
+      resources :four_hundred_meter_ms
+      resources :one_hundred_meter_ms
+      resources :one_ten_hurdle_ms
+      resources :sixteen_hundred_meter_ms
+      resources :two_hundred_meter_ms
+      resources :two_mile_ms
     end
   end
 

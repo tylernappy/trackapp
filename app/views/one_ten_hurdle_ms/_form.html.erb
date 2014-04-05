@@ -1,0 +1,56 @@
+<%= form_for [@season, @meet, @one_ten_hurdle_m], :html => { :mulitpart => true } do |f| %>
+  
+  <div class="row">
+    <div class="span3">
+      <p>1<sup>st</sup></p>
+    </div>
+    <div class="span3">
+      <%= f.select :first_place_id, @schools  %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3">
+      <p>2<sup>nd</sup></p>
+    </div>
+    <div class="span3">
+      <%= f.select :second_place_id, @schools  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <p>3<sup>rd</sup></p>
+    </div>
+    <div class="span3">
+      <%= f.select :third_place_id, @schools  %>
+  </div>
+  </div>
+    <div class="row">
+    <div class="span3">
+      <p>4<sup>th</sup></p>
+    </div>
+    <div class="span3">
+      <%= f.select :fourth_place_id, @schools  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <p>5<sup>th</sup></p>
+    </div>
+    <div class="span3">
+      <%= f.select :fifth_place_id, @schools  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <p>6<sup>th</sup></p>
+    </div>
+    <div class="span3">
+      <%= f.select :sixth_place_id, @schools  %>
+    </div>
+  </div>
+
+
+  <dt><%= f.submit "Submit", :class => 'btn' %></dt>
+
+<% end %>

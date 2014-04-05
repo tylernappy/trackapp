@@ -54,9 +54,23 @@ class Meet < ActiveRecord::Base
     
     #four hundred hurdles
     four_hundred_hurdles_m = meet.four_hundred_hurdles_ms.first.attributes
+    one_hundred_meter_m = meet.one_hundred_meter_ms.first.attributes
+    sixteen_hundred_meter_m = meet.sixteen_hundred_meter_ms.first.attributes
+    four_hundred_meter_m = meet.four_hundred_meter_ms.first.attributes
+    eight_hundred_meter_m = meet.eight_hundred_meter_ms.first.attributes
+    one_ten_hurdle_m = meet.one_ten_hurdle_ms.first.attributes
+    two_mile_m = meet.two_mile_ms.first.attributes
+    two_hundred_meter_m = meet.two_hundred_meter_ms.first.attributes
     opponents.each do |opponent|
       points = 0
       points = self.determine_points(meet, four_hundred_hurdles_m, opponent, points)
+      points = self.determine_points(meet, one_hundred_meter_m, opponent, points)
+      points = self.determine_points(meet, sixteen_hundred_meter_m, opponent, points)
+      points = self.determine_points(meet, four_hundred_meter_m, opponent, points)
+      points = self.determine_points(meet, one_ten_hurdle_m, opponent, points)
+      points = self.determine_points(meet, eight_hundred_meter_m, opponent, points)
+      points = self.determine_points(meet, two_mile_m, opponent, points)
+      points = self.determine_points(meet, two_hundred_meter_m, opponent, points)
       opponent.score = points
       opponent.save
     end
