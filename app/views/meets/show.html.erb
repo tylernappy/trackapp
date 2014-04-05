@@ -2,8 +2,11 @@
 <h1><%= "#{@meet.name} at #{@meet.location}, #{@meet.date}" %></h1>
 <div class="row">
   <div class="span12">
-    <%= link_to "Create Event Lineup", new_season_meet_events_boy_path(@season, @meet), :class => 'btn btn-success' %>
-    <%= link_to "See Lineup", season_meet_events_boys_path(@season, @meet), :class => 'btn' %>
+    <% if @meet.events_boys.count == current_coach.athletes.where(boy: true).count %>
+      <%= link_to "See Lineup", season_meet_events_boys_path(@season, @meet), :class => 'btn' %>
+    <% else %>
+      <%= link_to "Create Event Lineup", new_season_meet_events_boy_path(@season, @meet), :class => 'btn btn-success' %>
+    <% end %>
     <%= link_to "Back", season_meets_path, :class => 'btn' %>
     <%= link_to "Edit", edit_season_meet_path, :class => 'btn' %>
     <%= link_to "Add more opponents", new_season_meet_opponent_path(@season, @meet), :class => 'btn' %>

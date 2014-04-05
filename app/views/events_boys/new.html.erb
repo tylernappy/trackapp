@@ -1,115 +1,98 @@
-    <h1><%= "Create new events for the boys for #{@meet.name}" %></h1>
+<h1><%= "Create new events for the boys for #{@meet.name}" %></h1>
 
-    <table id="events-table">
-      <tr>
-        <th></th>
-        <% @events.each do |event| %>
-          <th><%= event %></th>
-        <% end %>
-      </tr>
+<div id="events-table">
+  <div class="row">
+    <div class="span3"></div>
+    <% @events.each do |event| %>
+      <div class="span1"><%= event %></div>
+    <% end %>
+  </div>
 
-      <% @events_boys.each do |event| %>
-        <tr>
-          <td><%= Athlete.find_by_id(event.athlete_id).name %></td>
-          <%= form_for [@season, @meet, event], :remote => true, :html => { :mulitpart => true } do |f| %>
-          
-            <td><%= f.check_box :boys_400_m_im %></td>
+  <% @events_boys.each do |event| %>
+    <div class="row">
+      <div class="span3"><%= Athlete.find_by_id(event.athlete_id).name %></div>
+      <%= form_for [@season, @meet, event], :remote => true, :html => { :mulitpart => true } do |f| %>
+      
+        <div class="span1"><%= f.check_box :boys_400_m_im %></div>
 
-            <td><%= f.check_box :boys_100_m %></td>
+        <div class="span1"><%= f.check_box :boys_100_m %></div>
 
-            <td><%= f.check_box :boys_1600_m  %></td>
+        <div class="span1"><%= f.check_box :boys_1600_m  %></div>
 
-            <td><%= f.check_box :boys_400_m  %></td>
+        <div class="span1"><%= f.check_box :boys_400_m  %></div>
 
-            <td><%= f.check_box :boys_110_m_hh %></td>
+        <div class="span1"><%= f.check_box :boys_110_m_hh %></div>
 
-            <td><%= f.check_box :boys_800_m %></td>
+        <div class="span1"><%= f.check_box :boys_800_m %></div>
 
-            <td><%= f.check_box :boys_3200_m  %></td>
+        <div class="span1"><%= f.check_box :boys_3200_m  %></div>
 
-            <td><%= f.check_box :boys_200_m  %></td>
+        <div class="span1"><%= f.check_box :boys_200_m  %></div>
 
-            <%= f.hidden_field :athlete_id, :value => event.athlete_id %>
+        <%= f.hidden_field :athlete_id, :value => event.athlete_id %>
 
-            <td style="visibility:hidden;"><%= f.submit "Submit", :class => 'btn' %></td>
+        <div class="span1" style="visibility:hidden;"><%= f.submit "Submit", :class => 'btn' %></div>
 
-          <% end %>
-        </tr>
       <% end %>
+    </div>
+  <% end %>
 
-    </table>
+</div>
 
-    <input type="button" class="btn btn-success btn-to-submit" value="Submit" onclick="submitForms()" />
-    <%= link_to "See Lineup" ,season_meet_events_boys_path, :class => 'btn' %>
+<input type="button" class="btn btn-success btn-to-submit" value="Submit" onclick="submitForms()" />
+<%= link_to "See Lineup" ,season_meet_events_boys_path, :class => 'btn see-lineup-button' %>
 
-    <script type="text/javascript">
-     submitForms = function() {
-      var athletes = new Array();
-      var arrayInAthletes = new Array();
-      var buttons = new Array();
-      element = document.getElementById("events-table");
-      var athletesArray = element.children[0].children
-      // for checking to see if not in more than three events
-      for (i=1; i < athletesArray.length; i++) {
-        var rowArray = athletesArray[i].children;
-        arrayInAthletes = [];
-        arrayInAthletes[0] = rowArray[0].innerText;
-        var sum = 0;
-        
-        for (j=2; j < (rowArray.length-2); j++) {
-          var checkBox = rowArray[j].children[1];
-          if (checkBox.checked) {
-            arrayInAthletes[sum+1] = rowArray[j].children[0].name;
-            sum += 1;
-          }
-        }
+<script type="text/javascript">
+changeVisibilityOfSubmit = function() {
+  document.getElementsByClassName('btn-to-submit')[0].style.display="none";
+}
 
-        athletes[i-1] = arrayInAthletes;
+changeVisibilityOfLineup = function() {
+  document.getElementsByClassName('see-lineup-button')[0].style.visibility = "visible";
+}
 
+submitForms = function() {
+  var athletes = new Array();
+  var arrayInAthletes = new Array();
+  var buttons = new Array();
+  element = document.getElementById("events-table");
+  var athletesArray = element.children;
+  // for checking to see if not in more than three events
+  for (i=1; i < athletesArray.length; i++) {
+    var rowArray = athletesArray[i].children;
+    arrayInAthletes = [];
+    arrayInAthletes[0] = rowArray[0].innerText;
+    var sum = 0;
+    
+    for (j=1; j < (rowArray[1].children.length-2); j++) {
+      var checkBox = rowArray[1].children[j].children[1];
+      if (checkBox.checked) {
+        arrayInAthletes[sum+1] = athletesArray[0].children[j].innerText;
+        sum += 1;
       }
-      // check for sum
-      for (i=0; i<athletes.length; i++) {
-        if (athletes[i].length > 4) {
-          alert("One or more athletes is in too many events");
-          return;
-        }
-      }
+    }
 
-      // for submitting
-      for (i=1; i < athletesArray.length; i++) {
-        buttons.push(athletesArray[i].children[athletesArray[i].children.length-1].children[0]);
-      }
-      for (i=0; i<buttons.length; i++) {
-        buttons[i].click();
-      }
-      document.getElementsByClassName('btn-to-submit')[0].style.display="none"
-      // 
+    athletes[i-1] = arrayInAthletes;
 
-     }
-    </script>
+  }
+  // check for sum
+  for (i=0; i<athletes.length; i++) {
+    if (athletes[i].length > 4) {
+      alert("One or more athletes is in too many events");
+      return;
+    }
+  }
 
+  // for submitting
+  for (i=1; i < athletesArray.length; i++) {
+    buttons.push(athletesArray[i].children[1].children[athletesArray[i].children[1].children.length-1].children[0]);
+  }
+  for (i=0; i<buttons.length; i++) {
+    buttons[i].click();
+  }
 
-
-    <script type="text/javascript">
-      var athletes = new Array();
-      var arrayInAthletes = new Array();
-      element = document.getElementById("events-table");
-      var athletesArray = element.children[0].children
-      for (i=1; i < athletesArray.length; i++) {
-        var rowArray = athletesArray[i].children;
-        arrayInAthletes = [];
-        arrayInAthletes[0] = rowArray[0].innerText;
-        var sum = 0;
-        
-        for (j=2; j < (rowArray.length-2); j++) {
-          var checkBox = rowArray[j].children[1];
-          if (checkBox.checked) {
-            arrayInAthletes[sum+1] = rowArray[j].children[0].name;
-            sum += 1;
-          }
-        }
-
-        athletes[i-1] = arrayInAthletes;
-
-      }
-    </script>
+  changeVisibilityOfSubmit();
+  
+  changeVisibilityOfLineup();
+}
+</script>
