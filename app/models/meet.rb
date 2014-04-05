@@ -32,7 +32,7 @@ class Meet < ActiveRecord::Base
           when "3"
             points = meet.third_regular
           when "4"
-            points = meet.fouth_regular
+            points = meet.fourth_regular
           when "5"
             points = meet.fifth_regular
           when "6"
