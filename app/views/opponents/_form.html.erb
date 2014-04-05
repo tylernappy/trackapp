@@ -1,6 +1,7 @@
 <%= form_for ([@season, @meet, @opponent]), :html => { :mulitpart => true } do |f| %>
   
   <%= f.select :school_id, @schools  %>
+  <%= f.hidden_field :score, :value => 0.0 %>
 
   <dt><%= f.submit "Submit", :class => 'btn' %></dt>
 

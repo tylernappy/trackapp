@@ -30,24 +30,24 @@
         <table>
           <tr>
             <th>Event</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
+            <th>1<sup>st</sup></th>
+            <th>2<sup>nd</sup></th>
+            <th>3<sup>rd</sup></th>
+            <th>4<sup>th</sup></th>
+            <th>5<sup>th</sup></th>
+            <th>6<sup>th</sup></th>
           </tr>
           <tr>
             <td><%= link_to @boys_events[0], edit_season_meet_four_hundred_hurdles_m_path(@season, @meet, @boys_four_hundred_hurdles.first) %></td>
             <% if Opponent.find_by_id(@boys_four_hundred_hurdles.first.first_place_id).nil? %>
               <td>Haven't run yet</td>
             <% else %>
-              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.first_place_id).school_id).name %></td>
-              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.second_place_id).school_id).name %></td>
-              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.third_place_id).school_id).name %></td>
-              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.fourth_place_id).school_id).name %></td>
-              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.fifth_place_id).school_id).name %></td>
-              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.sixth_place_id).school_id).name %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.first_place_id).school_id).name unless  @boys_four_hundred_hurdles.first.first_place_id == 0 %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.second_place_id).school_id).name unless  @boys_four_hundred_hurdles.first.second_place_id == 0 %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.third_place_id).school_id).name unless  @boys_four_hundred_hurdles.first.third_place_id == 0 %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.fourth_place_id).school_id).name unless  @boys_four_hundred_hurdles.first.fourth_place_id == 0 %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.fifth_place_id).school_id).name unless  @boys_four_hundred_hurdles.first.fifth_place_id == 0 %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.sixth_place_id).school_id).name unless  @boys_four_hundred_hurdles.first.sixth_place_id == 0 %></td>
             <% end %>
           </tr>
         </table>

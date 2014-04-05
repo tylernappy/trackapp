@@ -56,28 +56,35 @@ class Meet < ActiveRecord::Base
     four_hundred_hurdles_m = meet.four_hundred_hurdles_ms.first.attributes
     opponents.each do |opponent|
       points = 0
-      if four_hundred_hurdles_m["first_place_id"] == opponent.id
-        points += meet.first_regular
-      end
-      if four_hundred_hurdles_m["second_place_id"] == opponent.id
-        points += meet.second_regular
-      end
-      if four_hundred_hurdles_m["third_place_id"] == opponent.id
-        points += meet.third_regular
-      end
-      if four_hundred_hurdles_m["fourth_place_id"] == opponent.id
-        points += meet.fourth_regular
-      end
-      if four_hundred_hurdles_m["fifth_place_id"] == opponent.id
-        points += meet.fifth_regular
-      end
-      if four_hundred_hurdles_m["sixth_place_id"] == opponent.id
-        points += meet.sixth_regular
-      end
+      points = self.determine_points(meet, four_hundred_hurdles_m, opponent, points)
       opponent.score = points
       opponent.save
     end
   end
+
+  def self.determine_points meet, event, opponent, points
+    if event["first_place_id"] == opponent.id
+      points += meet.first_regular
+    end
+    if event["second_place_id"] == opponent.id
+      points += meet.second_regular
+    end
+    if event["third_place_id"] == opponent.id
+      points += meet.third_regular
+    end
+    if event["fourth_place_id"] == opponent.id
+      points += meet.fourth_regular
+    end
+    if event["fifth_place_id"] == opponent.id
+      points += meet.fifth_regular
+    end
+    if event["sixth_place_id"] == opponent.id
+      points += meet.sixth_regular
+    end
+    return points
+  end
+
+
 
 
   def self.hello
