@@ -1,4 +1,6 @@
 TrackAppTwo::Application.routes.draw do
+  get "four_hundred_hurdles_ms/edit"
+  get "four_hundred_hurdles_ms/update"
   get "opponents/new"
   get "opponents/create"
   get "opponents/edit"
@@ -35,6 +37,7 @@ TrackAppTwo::Application.routes.draw do
       resources :events_boys
       # resources :events_girls
       resources :opponents
+      resources :four_hundred_hurdles_ms
       # resources :events
       # resources :one_hundred_meters
       # resources :eight_hundred_meter_ms

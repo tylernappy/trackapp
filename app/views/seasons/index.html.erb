@@ -9,9 +9,9 @@
       <div class="row">
         <div class="span4">
           <% if season.spring == true %>
-            <h3><%= link_to "Spring #{season.year}", season %></h3>
+            <h3><%= link_to "Spring #{season.year}", season_meets_path(season) %></h3>
           <% elsif season.winter == true %>
-            <h3><%= link_to "Winter #{season.year}", season %></h3>
+            <h3><%= link_to "Winter #{season.year}", season_meets_path(season) %></h3>
           <% end %>
         </div>
       </div>

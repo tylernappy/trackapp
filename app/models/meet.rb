@@ -49,6 +49,37 @@ class Meet < ActiveRecord::Base
     end
   end
 
+  def self.update_team_scores meet
+    opponents = meet.opponents
+    
+    #four hundred hurdles
+    four_hundred_hurdles_m = meet.four_hundred_hurdles_ms.first.attributes
+    opponents.each do |opponent|
+      points = 0
+      if four_hundred_hurdles_m["first_place_id"] == opponent.id
+        points += meet.first_regular
+      end
+      if four_hundred_hurdles_m["second_place_id"] == opponent.id
+        points += meet.second_regular
+      end
+      if four_hundred_hurdles_m["third_place_id"] == opponent.id
+        points += meet.third_regular
+      end
+      if four_hundred_hurdles_m["fourth_place_id"] == opponent.id
+        points += meet.fourth_regular
+      end
+      if four_hundred_hurdles_m["fifth_place_id"] == opponent.id
+        points += meet.fifth_regular
+      end
+      if four_hundred_hurdles_m["sixth_place_id"] == opponent.id
+        points += meet.sixth_regular
+      end
+      opponent.score = points
+      opponent.save
+    end
+  end
+
+
   def self.hello
     puts "hello"
   end

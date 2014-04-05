@@ -1,22 +1,65 @@
+<% Meet.update_team_scores(@meet) %>
 <h1><%= "#{@meet.name} at #{@meet.location}, #{@meet.date}" %></h1>
+<div class="row">
+  <div class="span12">
+    <%= link_to "Create Event Lineup", new_season_meet_events_boy_path(@season, @meet), :class => 'btn btn-success' %>
+    <%= link_to "See Lineup", season_meet_events_boys_path(@season, @meet), :class => 'btn' %>
+    <%= link_to "Back", season_meets_path, :class => 'btn' %>
+    <%= link_to "Edit", edit_season_meet_path, :class => 'btn' %>
+    <%= link_to "Add more opponents", new_season_meet_opponent_path(@season, @meet), :class => 'btn' %>
+  </div>
+</div>
 
 <div class="row">
 
   <div class="span4">
     <h2>Standings</h2>
+    <% @opponents.each do |opponent| %>
+      <div class="row">
+        <div class="span4">
+          <%= "#{School.find_by_id(opponent.school_id).name}: #{opponent.score}" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
-  <div class="span4">
-    <h2>Something else</h2>
-  </div>
+  <div class="span8">
+    <div class="row">
+    <h2>Boys Events</h2>
+      <div class="span8">
+        <table>
+          <tr>
+            <th>Event</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+          </tr>
+          <tr>
+            <td><%= link_to @boys_events[0], edit_season_meet_four_hundred_hurdles_m_path(@season, @meet, @boys_four_hundred_hurdles.first) %></td>
+            <% if Opponent.find_by_id(@boys_four_hundred_hurdles.first.first_place_id).nil? %>
+              <td>Haven't run yet</td>
+            <% else %>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.first_place_id).school_id).name %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.second_place_id).school_id).name %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.third_place_id).school_id).name %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.fourth_place_id).school_id).name %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.fifth_place_id).school_id).name %></td>
+              <td><%= School.find_by_id(Opponent.find_by_id(@boys_four_hundred_hurdles.first.sixth_place_id).school_id).name %></td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
 
-  <div class="span4">
-    <h2>Scoring Scheme</h2>
+    <div class="row">
+    <h2>Girls Events</h2>
+      <div class="span8">
+
+      </dv>
+    </div>
   </div>
 
 </div>
-
-<%= link_to "Create Event Lineup", new_season_meet_events_boy_path(@season, @meet), :class => 'btn btn-success' %>
-<%= link_to "See Lineup", season_meet_events_boys_path(@season, @meet), :class => 'btn' %>
-<%= link_to "Back", season_meets_path, :class => 'btn' %>
-<%= link_to "Edit", edit_season_meet_path, :class => 'btn' %>

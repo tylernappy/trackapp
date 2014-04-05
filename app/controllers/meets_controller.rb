@@ -6,6 +6,14 @@ class MeetsController < ApplicationController
     find_season
     @meet = @season.meets.create(meet_permit)
     if @meet.save
+      @meet.four_hundred_hurdles_ms.new.save
+      @meet.sixteen_hundred_meter_ms.new.save
+      @meet.one_hundred_meter_ms.new.save
+      @meet.four_hundred_meter_ms.new.save
+      @meet.one_ten_hurdle_ms.new.save
+      @meet.eight_hundred_meter_ms.new.save
+      @meet.two_mile_ms.new.save
+      @meet.two_hundred_meter_ms.new.save
       redirect_to new_season_meet_opponent_path(@season, @meet), notice: 'Season was successfully created.'
     else
       render action: "new"
@@ -23,13 +31,19 @@ class MeetsController < ApplicationController
   end
 
   def show
-    # find_season
-    # debugger
-    # @meet = @season.meets.build
     @season = find_season
-    @meet = @season.meets.find(params[:id]) 
-    # debugger
-    # debugger
+    @meet = @season.meets.find(params[:id])
+    @opponents = @meet.opponents.sort_by(&:score).reverse
+
+    @boys_events = ["400 IH", "100", "1600", "400", "110 HH", "800", "3200", "200"]
+    @boys_four_hundred_hurdles = @meet.four_hundred_hurdles_ms
+    @boys_sixteen_hundred = @meet.sixteen_hundred_meter_ms
+    @boys_one_hundred = @meet.one_hundred_meter_ms
+    @boys_four_hundred = @meet.four_hundred_meter_ms
+    @boys_one_hundred_ten_hurdles = @meet.one_ten_hurdle_ms
+    @boys_eight_hundred = @meet.eight_hundred_meter_ms
+    @boys_thirty_two_hundred = @meet.two_mile_ms
+    @boys_two_hundred = @meet.two_hundred_meter_ms
   end
 
   def edit

@@ -1,0 +1,12 @@
+<%= form_for [@season, @meet, @four_hundred_hurdles_m], :html => { :mulitpart => true } do |f| %>
+  
+    <%= f.select :first_place_id, @schools  %>
+    <%= f.select :second_place_id, @schools  %>   
+    <%= f.select :third_place_id, @schools  %>
+    <%= f.select :fourth_place_id, @schools  %>
+    <%= f.select :fifth_place_id, @schools  %>
+    <%= f.select :sixth_place_id, @schools  %>
+
+  <dt><%= f.submit "Submit", :class => 'btn' %></dt>
+
+<% end %>
