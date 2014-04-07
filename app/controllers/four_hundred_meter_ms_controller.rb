@@ -26,7 +26,7 @@ class FourHundredMeterMsController < ApplicationController
 
   private
   def four_hundred_meter_m_permit
-    params.require(:four_hundred_meter_m).permit(:meet_id, :first_place_id, :second_place_id, :third_place_id, :fourth_place_id, :fifth_place_id, :sixth_place_id)
+    params.require(:four_hundred_meter_m).permit(:meet_id, :first_place_id, :second_place_id, :third_place_id, :fourth_place_id, :fifth_place_id, :sixth_place_id, :first_place_tie_two_id, :first_place_tie_three_id, :first_place_tie_four_id, :first_place_tie_five_id, :first_place_tie_six_id, :second_place_tie_two_id, :second_place_tie_three_id, :second_place_tie_four_id, :second_place_tie_five_id, :third_place_tie_two_id, :third_place_tie_three_id, :third_place_tie_four_id, :fourth_place_tie_two_id, :fourth_place_tie_three_id, :fifth_place_tie_two_id)
   end
 
   def find_season
