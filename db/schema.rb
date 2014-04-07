@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327231215) do
+ActiveRecord::Schema.define(version: 20140407221605) do
 
   create_table "athletes", force: true do |t|
     t.string   "name"
@@ -53,6 +53,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "events_boys", force: true do |t|
@@ -112,6 +127,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "four_hundred_meter_ms", force: true do |t|
@@ -124,6 +154,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "meets", force: true do |t|
@@ -156,6 +201,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "one_hundred_meters", force: true do |t|
@@ -180,6 +240,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "opponents", force: true do |t|
@@ -223,6 +298,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "two_hundred_meter_ms", force: true do |t|
@@ -235,6 +325,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
   create_table "two_mile_ms", force: true do |t|
@@ -247,6 +352,21 @@ ActiveRecord::Schema.define(version: 20140327231215) do
     t.integer  "sixth_place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_tie_two_id"
+    t.integer  "first_place_tie_three_id"
+    t.integer  "first_place_tie_four_id"
+    t.integer  "first_place_tie_five_id"
+    t.integer  "first_place_tie_six_id"
+    t.integer  "second_place_tie_two_id"
+    t.integer  "second_place_tie_three_id"
+    t.integer  "second_place_tie_four_id"
+    t.integer  "second_place_tie_five_id"
+    t.integer  "third_place_tie_two_id"
+    t.integer  "third_place_tie_three_id"
+    t.integer  "third_place_tie_four_id"
+    t.integer  "fourth_place_tie_two_id"
+    t.integer  "fourth_place_tie_three_id"
+    t.integer  "fifth_place_tie_two_id"
   end
 
 end
