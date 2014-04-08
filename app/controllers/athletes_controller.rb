@@ -14,6 +14,12 @@ class AthletesController < ApplicationController
     end
   end
 
+  def destroy
+    find_athlete
+    @athlete.destroy
+    redirect_to seasons_path
+  end
+
   def show
     @athlete = Athlete.find(params[:id])
   end
@@ -21,5 +27,9 @@ class AthletesController < ApplicationController
   private
   def athlete_permit
     params.require(:athlete).permit(:name, :grade, :coach_id, :boy, :girl)
+  end
+
+  def find_athlete
+    @athlete = current_coach.athletes.find(params[:id])
   end
 end
