@@ -7,7 +7,7 @@ class FourHundredHurdlesMsController < ApplicationController
 
     #for drop down menu
     @schools = []
-    @schools << [ "Nobody", 0]
+    @schools << ["Nobody", 0]
     @opponents.each do |opponent|
       @schools << [ School.find_by_id(opponent.school_id).name, opponent.id]
     end
