@@ -40,7 +40,8 @@
 </div>
 
 <input type="button" class="btn btn-success btn-to-submit" value="Submit" onclick="submitForms()" />
-<%= link_to "See Lineup" ,season_meet_events_boys_path, :class => 'btn see-lineup-button' %>
+<%= link_to "See Lineup", season_meet_events_boys_path, :class => 'btn see-lineup-button' %>
+<%= link_to "Back", season_meet_path(@season, @meet), :class => 'btn' %>
 
 <script type="text/javascript">
 changeVisibilityOfSubmit = function() {

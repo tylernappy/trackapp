@@ -69,7 +69,7 @@
         <% @schools.each do |school| %>
           <div class="row">
             <div class="span4">
-              <p><%= school.name %></p>
+              <p><%= link_to school.name, coach_school_path(current_coach, school) %></p>
             </div>
           </div>
         <% end %>

@@ -4,6 +4,16 @@ class AthletesController < ApplicationController
    @athletes_already_created = current_coach.athletes.order('created_at DESC')
   end
 
+  def edit
+    find_athlete
+  end
+
+  def update
+    find_athlete
+    @athlete.update(athlete_permit)   
+    redirect_to coach_athlete_path
+  end
+
   def create
     @athlete = current_coach.athletes.create(athlete_permit)
 
