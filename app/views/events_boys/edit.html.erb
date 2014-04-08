@@ -17,15 +17,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_400_m_im, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_400_m_im, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_400_m_im, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_400_m_im %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_400_m_im, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_400_m_im %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_400_m_im, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_400_m_im %></td>
     </tr>
   <% end %>
 
@@ -36,15 +36,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_1600_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_1600_m, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_1600_m, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_1600_m %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_1600_m, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_1600_m %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_1600_m, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_1600_m %></td>
     </tr>
   <% end %>
 
@@ -55,15 +55,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_100_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_100_m, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_100_m, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_100_m %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_100_m, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_100_m %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_100_m, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_100_m %></td>
     </tr>
   <% end %>
 
@@ -74,15 +74,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_400_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_400_m, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_400_m, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_400_m %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_400_m, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_400_m %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_400_m, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_400_m %></td>
     </tr>
   <% end %>
 
@@ -93,15 +93,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_110_m_hh, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_110_m_hh, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_110_m_hh, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_110_m_hh %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_110_m_hh, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_110_m_hh %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_110_m_hh, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_110_m_hh %></td>
     </tr>
   <% end %>
 
@@ -112,15 +112,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_800_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_800_m, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_800_m, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_800_m %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_800_m, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_800_m %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_800_m, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_800_m %></td>
     </tr>
   <% end %>
 
@@ -131,15 +131,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_3200_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_3200_m, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_3200_m, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_3200_m %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_3200_m, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_3200_m %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_3200_m, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_3200_m %></td>
     </tr>
   <% end %>
 
@@ -150,15 +150,15 @@
     </tr>
     <tr>
       <td><%= f.label "Place" %></td>
-      <td><%= f.select :place_200_m, (1..6).map{ |num| num.to_s}.unshift('No Place')  %></td>
+      <td><%= f.select :place_200_m, (1..6).map{ |num| num.to_s}.unshift('No Place').unshift('Did Not Run Yet')  %></td>
     </tr>
     <tr>
       <td><%= f.label "Time" %></td>
-      <td><%= f.select :time_minutes_200_m, (0...60) %></td>
+      <td><%= f.text_field :time_minutes_200_m %></td>
       <td>:</td>
-      <td><%= f.select :time_seconds_200_m, (0...60) %></td>
+      <td><%= f.text_field :time_seconds_200_m %></td>
       <td>.</td>
-      <td><%= f.select :time_decimals_200_m, (0...100) %></td>
+      <td><%= f.text_field :time_decimals_200_m %></td>
     </tr>
   <% end %>
 

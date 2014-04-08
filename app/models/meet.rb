@@ -25,6 +25,8 @@ class Meet < ActiveRecord::Base
           case value
           when "No Place"
             points = 0
+          when "Did Not Run Yet"
+            points = 0
           when "1"
             points = meet.first_regular
           when "2"
