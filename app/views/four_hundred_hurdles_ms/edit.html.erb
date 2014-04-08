@@ -1,9 +1,12 @@
 <h1>Four Hundred Hurdles Winners</h1>
 
-<div class="row">
+<div class="row places-table">
   <div class="span12">
     <%= render "form" %>
   </div>
 </div>
 
 <%= link_to "Back", season_meet_path(@season, @meet), :class => 'btn' %>
+<input type="button" class="btn btn-success btn-to-submit" value="Submit" onclick="submitForms()" />
+
+<%= javascript_include_tag "ties" %>
