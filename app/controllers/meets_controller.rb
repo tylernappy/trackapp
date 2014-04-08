@@ -64,8 +64,7 @@ class MeetsController < ApplicationController
   def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
-
-    redirect_to seasons_path
+    redirect_to season_meets_path
   end
 
   private

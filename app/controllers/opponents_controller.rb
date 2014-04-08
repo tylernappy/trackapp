@@ -32,6 +32,14 @@ class OpponentsController < ApplicationController
   def index
   end
 
+  def destroy
+    find_season
+    find_meet
+    @opponent = @meet.opponents.find(params[:id])
+    @opponent.destroy
+    redirect_to new_season_meet_opponent_path
+  end
+
   private
   def opponents_permit
     params.require(:opponent).permit(:school_id, :meet_id, :score)
