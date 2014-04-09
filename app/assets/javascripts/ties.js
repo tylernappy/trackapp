@@ -15,6 +15,16 @@ submitForms = function() {
     }
   }
 
+  var sum = 0;
+  for (i=0; i<places.length; i++) {
+    sum += places[i];
+  }
+  //check to see if there are too many
+  if (sum>6)  {
+    alert("You entered "+sum+" winners. Please remove some. There should only be 6.");
+    return;
+  }
+
   //determine if ties make sense depending on how user input results
   for (i=0; i<(places.length-1); i++) {
     if (places[i]>1) {
